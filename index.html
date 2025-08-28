@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Emergency Service</title>
+    <link rel="stylesheet" href="styles/styless.css" />
+  </head>
+  <body>
+    <!-- Nav bar section  -->
+    <nav class="navbar">
+      <div class="left-section">
+        <img src="./images/logo.png" alt="Logo" class="logo" />
+        <span class="title"
+          >Emergency <br />
+          Service</span
+        >
+      </div>
+
+      <div class="right-section">
+        <div class="status">
+          <span class="count">0</span>
+          <img src="./images/heart.png" alt="Heart" class="icon" />
+        </div>
+        <div class="status">
+          <span class="count">100</span>
+          <img src="./images/coin.png" alt="Coin" class="icon" />
+        </div>
+        <button class="copy-btn">0 Copy</button>
+      </div>
+    </nav>
+
+    <!-- Banner section -->
+    <header class="banner">
+      <img src="./images/logo-dark.png" alt="Government Logo" class="banner-logo" />
+      <h1 class="banner-title">Emergency Service Directory</h1>
+      <p class="banner-subtitle">
+        Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</strong>
+      </p>
+    </header>
+
+  <!-- Main section -->
+<div class="main-section">
+      <div class="container">
+    <div class="cards">
+      <!-- Card Template -->
+      <div class="card">
+        <img src="./images/emergency.png" alt="Emergency" class="icons">
+        <h3>National Emergency Number</h3>
+        <p>999</p>
+        <small>All</small>
+        <div class="actions">
+          <button onclick="copyNumber('999')">📋 Copy</button>
+          <button onclick="callNumber('National Emergency Number', '999')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/police.png" alt="Police" class="icons">
+        <h3>Police Helpline Number</h3>
+        <p>999</p>
+        <small>Police</small>
+        <div class="actions">
+          <button onclick="copyNumber('999')">📋 Copy</button>
+          <button onclick="callNumber('Police Helpline Number', '999')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/fire-service.png" alt="Fire" class="icons">
+        <h3>Fire Service Number</h3>
+        <p>999</p>
+        <small>Fire</small>
+        <div class="actions">
+          <button onclick="copyNumber('999')">📋 Copy</button>
+          <button onclick="callNumber('Fire Service Number', '999')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/ambulance.png" alt="Ambulance" class="icons">
+        <h3>Ambulance Service</h3>
+        <p>1994-999999</p>
+        <small>Health</small>
+        <div class="actions">
+          <button onclick="copyNumber('1994-999999')">📋 Copy</button>
+          <button onclick="callNumber('Ambulance Service', '1994-999999')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emergency.png" alt="Women & Child" class="icons">
+        <h3>Women & Child Helpline</h3>
+        <p>109</p>
+        <small>NGO</small>
+        <div class="actions">
+          <button onclick="copyNumber('109')">📋 Copy</button>
+          <button onclick="callNumber('Women & Child Helpline', '109')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emergency.png" alt="Anti-Corruption" class="icons">
+        <h3>Anti-Corruption Helpline</h3>
+        <p>106</p>
+        <small>Travel</small>
+        <div class="actions">
+          <button onclick="copyNumber('106')">📋 Copy</button>
+          <button onclick="callNumber('Anti-Corruption Helpline', '106')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emergency.png" alt="Electricity" class="icons">
+        <h3>Electricity Helpline</h3>
+        <p>16216</p>
+        <small>Police</small>
+        <div class="actions">
+          <button onclick="copyNumber('16216')">📋 Copy</button>
+          <button onclick="callNumber('Electricity Helpline', '16216')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emergency.png" alt="Brac" class="icons">
+        <h3>Brac Helpline</h3>
+        <p>16445</p>
+        <small>Police</small>
+        <div class="actions">
+          <button onclick="copyNumber('16445')">📋 Copy</button>
+          <button onclick="callNumber('Brac Helpline', '16445')">📞 Call</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="./images/emergency.png" alt="Railway" class="icons">
+        <h3>Bangladesh Railway Helpline </h3>
+        <p>163</p>
+        <small>Police</small>
+        <div class="actions">
+          <button onclick="copyNumber('163')">📋 Copy</button>
+          <button onclick="callNumber('Bangladesh Railway Helpline', '163')">📞 Call</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call History -->
+    <div class="call-history">
+      <div class="history-header">
+        <h3>📞 Call History</h3>
+        <button onclick="clearHistory()">Clear</button>
+      </div>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+</div>
+
+  <script>
+    function copyNumber(number) {
+      navigator.clipboard.writeText(number);
+      alert("Copied: " + number);
+    }
+
+    function callNumber(name, number) {
+      const time = new Date().toLocaleTimeString();
+      const entry = document.createElement("li");
+      entry.textContent = `${name} (${number}) - ${time}`;
+      document.getElementById("historyList").prepend(entry);
+    }
+
+    function clearHistory() {
+      document.getElementById("historyList").innerHTML = "";
+    }
+  </script>
+
+  </body>
+</html>
