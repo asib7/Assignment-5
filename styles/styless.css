@@ -153,7 +153,7 @@ body {
 }
 .card-title {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 19px;
   margin-top: 10px;
 }
 .subtitle {
@@ -163,8 +163,8 @@ body {
   font-weight: 400;
 }
 .number {
-  font-size: 26px;
-  font-weight: 650;
+  font-size: 23px;
+  font-weight: 600;
 }
 .tag {
   display: inline-block;
@@ -243,7 +243,7 @@ body {
 
 #historyList li {
   margin: 7px 0;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 14px;
   border-radius: 8px;
   text-align: center;
